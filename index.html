@@ -1,189 +1,106 @@
-
-eduardoduduzao503-beep
-guild-website
-Repository navigation
-Code
-Issues
-Pull requests
-Agents
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-Commit 6246c75
-eduardoduduzao503-beep
-eduardoduduzao503-beep
-committed
-28 minutes ago
-·
-Update index.html to change button onclick for WhatsApp
-main
-1 parent 
-0020113
- commit 
-6246c75
-File tree
-Filter files…
-index.html
-1 file changed
-+1
--176
-lines changed
-Search within code
- 
-‎index.html‎
-+1
--176
-Lines changed: 1 addition & 176 deletions
-Original file line number	Diff line number	Diff line change
-@@ -1,176 +1 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guilda sem lei.85¹</title>
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #000000, #1a0000);
-    color: white;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, #000000, #001f3f);
+    color: #cceeff;
 }
+
 header {
-    background: black;
-    padding: 30px;
+    background-color: #000814;
+    padding: 20px;
     text-align: center;
-    border-bottom: 3px solid red;
+    border-bottom: 2px solid #00aaff;
 }
-header h1 {
-    font-size: 45px;
-    color: red;
-    letter-spacing: 3px;
+
+h1 {
+    color: #00ccff;
+    text-shadow: 0 0 10px #00ccff;
 }
-header p {
-    color: #ccc;
-}
-nav {
-    background: #111;
-    padding: 15px;
-    text-align: center;
-}
+
 nav a {
+    color: #cceeff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #00ccff;
+}
+
+.conteudo {
+    padding: 50px;
+    text-align: center;
+}
+
+.botao {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #00ccff, #0066ff);
     color: white;
     text-decoration: none;
-    margin: 0 20px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-nav a:hover {
-    color: red;
-}
-section {
-    padding: 60px 20px;
-    text-align: center;
-}
-h2 {
-    margin-bottom: 20px;
-    color: red;
-}
-.card-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-.card {
-    background: #1a1a1a;
-    padding: 20px;
-    width: 280px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px red;
-    transition: 0.3s;
-}
-.card:hover {
-    transform: scale(1.05);
-}
-button {
-    background: red;
-    color: white;
-    padding: 12px 25px;
-    border: none;
+    font-size: 18px;
     border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
+    box-shadow: 0 0 15px #00ccff;
     transition: 0.3s;
 }
-button:hover {
-    background: darkred;
-}
-footer {
-    background: black;
-    padding: 20px;
-    text-align: center;
-    margin-top: 40px;
-    border-top: 2px solid red;
-}
-</style>
+
+.botao:hover {
+    background: linear-gradient(90deg, #0066ff, #00ccff);
+    box-shadow: 0 0 25px #00ccff;
+}<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Recrutamento sem lei.85</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-    <h1>🔥 sem lei.85¹ 🔥</h1>
-    <p>Sem regras. Só vitória.</p>
-</header>
-<nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#membros">Membros</a>
-    <a href="#regras">Regras</a>
-    <a href="#contato">Entrar</a>
-</nav>
-<section id="sobre">
-    <h2>Sobre a Guilda</h2>
-    <p>Somos a guilda sem lei.85¹, focada em guerra de guildas,
-    rush agressivo e dominação total nas ranqueadas.</p>
-</section>
-<section id="membros">
-    <h2>Time Principal</h2>
-    <div class="card-container">
-        <div class="card">
-            <h3>cura</h3>
-            <p>Nick: Rock</p>
-            <p>Função: curandeirio</p>
-        </div>
-        <div class="card">
-            <h3>full gas</h3>
-            <p>Nick: blacn444X</p>
-            <p>Função: fullGas</p>
-        </div>
-        <div class="card">
-            <h3>dono</h3>
-            <p>Nick: alessandro</p>
-            <p>Função: todas</p>
-        </div>
-    </div>
-</section>
-<section id="regras">
-    <h2>Regras</h2>
-    <p>✔ Respeito entre membros</p>
-    <p>✔ Participar das guerras</p>
-    <p>✔ Atividade diária</p>
-    <p>✔ Jogar sério</p>
-</section>
-<section id="contato">
-    <h2>Quer entrar?</h2>
-    <p>clicar no ícone do WhatsApp aqui em baixo .</p>
-    <br>
-    <button onclick="window.location.href='https://wa.me/5521965825547'">entrar na Guilda</button>
-</section>
-<footer>
-    <p>© 2026 Guilda sem lei.85¹ - Todos os direitos reservados</p>
-</footer>
+
+    <header>
+        <h1>Recrutamento sem lei.85</h1>
+        <nav>
+            <a href="index.html">Sobre a Guilda</a>
+            <a href="entrar.html">Entrar para Sem Lei</a>
+        </nav>
+    </header>
+
+    <section class="conteudo">
+        <h2>Sobre a Guilda</h2>
+        <p>
+            A guilda <strong>sem lei.85</strong> é uma guilda focada em GG.
+            Só queremos pessoas boas, corajosas e dedicadas.
+            Aqui valorizamos respeito, habilidade e compromisso.
+        </p>
+    </section>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Entrar para sem lei.85</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Entrar para sem lei.85</h1>
+        <nav>
+            <a href="index.html">Sobre a Guilda</a>
+            <a href="entrar.html">Entrar para Sem Lei</a>
+        </nav>
+    </header>
+
+    <section class="conteudo">
+        <h2>Faça Parte da Elite</h2>
+        <p>Se você é forte, corajoso e quer evoluir, clique abaixo:</p>
+
+        <a class="botao" href="https://wa.me/5511914932723" target="_blank">
+            Entrar para Guilda
+        </a>
+    </section>
+
 </body>
 </html>
-<button onclick="window.location.href='https://wa.me/5521965825547'">Contact Us on WhatsApp</button>
