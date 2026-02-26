@@ -1,20 +1,53 @@
-body {
+/* RESET */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FUNDO ANIMADO */
+body {
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(180deg, #000000, #001f3f);
+    background: linear-gradient(-45deg, #000000, #001f3f, #000814, #002b5c);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
     color: #cceeff;
 }
 
+/* ANIMAÇÃO DO FUNDO */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* HEADER */
 header {
-    background-color: #000814;
+    background-color: rgba(0, 8, 20, 0.9);
     padding: 20px;
     text-align: center;
     border-bottom: 2px solid #00aaff;
+    animation: fadeDown 1s ease;
 }
 
+/* TÍTULO NEON */
 h1 {
     color: #00ccff;
-    text-shadow: 0 0 10px #00ccff;
+    text-shadow: 0 0 5px #00ccff,
+                 0 0 15px #00ccff,
+                 0 0 30px #00ccff;
+    animation: pulse 2s infinite alternate;
+}
+
+/* PULSAR */
+@keyframes pulse {
+    from { text-shadow: 0 0 10px #00ccff; }
+    to { text-shadow: 0 0 25px #00ccff; }
+}
+
+/* NAV */
+nav {
+    margin-top: 10px;
 }
 
 nav a {
@@ -22,20 +55,35 @@ nav a {
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 nav a:hover {
     color: #00ccff;
 }
 
+/* CONTEÚDO */
 .conteudo {
-    padding: 50px;
+    padding: 60px 20px;
     text-align: center;
+    animation: fadeUp 1.2s ease;
 }
 
+h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+p {
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+/* BOTÃO GAMER */
 .botao {
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 30px;
     padding: 15px 30px;
     background: linear-gradient(90deg, #00ccff, #0066ff);
     color: white;
@@ -47,12 +95,50 @@ nav a:hover {
 }
 
 .botao:hover {
-    background: linear-gradient(90deg, #0066ff, #00ccff);
-    box-shadow: 0 0 25px #00ccff;
+    transform: scale(1.1);
+    box-shadow: 0 0 30px #00ccff;
+}
+
+/* ANIMAÇÕES */
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 📱 RESPONSIVO */
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .conteudo {
+        padding: 40px 15px;
+    }
+
+    .botao {
+        width: 90%;
+        font-size: 16px;
+    }
 }<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recrutamento sem lei.85</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -80,6 +166,7 @@ nav a:hover {
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrar para sem lei.85</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -89,7 +176,7 @@ nav a:hover {
         <h1>Entrar para sem lei.85</h1>
         <nav>
             <a href="index.html">Sobre a Guilda</a>
-            <a href="entrar.html">Entrar para Sem Lei</a><button onclick="window.location.href='https://wa.me/5511914932723'">Contact Us on WhatsApp</button>
+            <a href="entrar.html">Entrar para Sem Lei</a>
         </nav>
     </header>
 
