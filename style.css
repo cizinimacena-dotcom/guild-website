@@ -1,80 +1,138 @@
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* FUNDO ANIMADO */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #0a0f1c;
+    background: linear-gradient(-45deg, #000000, #0a0f1c, #001f3f, #3a0000);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
     color: white;
-    position: relative;
     overflow-x: hidden;
 }
 
-/* LOGO NO FUNDO */
+/* Animação do fundo */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
-body::before {
-    content: "";
+/* LOGO GIGANTE NO FUNDO */
+.background-logo {
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     background: url("logo.png") no-repeat center;
     background-size: contain;
     transform: translate(-50%, -50%);
-    opacity: 0.08; /* transparência */
-    z-index: -1;
-
-    animation: ledBG 6s linear infinite;
+    opacity: 0.04; /* transparência forte */
+    pointer-events: none; /* não bloqueia clique */
+    z-index: 0;
+    animation: logoLED 8s linear infinite;
 }
 
-/* Animação trocando cor */
+/* Animação LED da logo */
+@keyframes logoLED {
+    0%   { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
 
-@keyframes ledBG {
-    0%   { filter: hue-rotate(0deg) drop-shadow(0 0 40px red); }
-    25%  { filter: hue-rotate(90deg) drop-shadow(0 0 40px lime); }
-    50%  { filter: hue-rotate(180deg) drop-shadow(0 0 40px cyan); }
-    75%  { filter: hue-rotate(270deg) drop-shadow(0 0 40px purple); }
-    100% { filter: hue-rotate(360deg) drop-shadow(0 0 40px red); }
+/* GARANTE QUE O CONTEÚDO FIQUE NA FRENTE */
+header, section, footer {
+    position: relative;
+    z-index: 1;
 }
 
 /* HEADER */
-
 header {
-    background-color: rgba(0, 8, 20, 0.8);
+    background: rgba(0, 8, 20, 0.8);
     padding: 20px;
     text-align: center;
-    border-bottom: 2px solid #00aaff;
+    border-bottom: 2px solid #00f0ff;
+    backdrop-filter: blur(5px);
 }
 
+/* TÍTULO NEON */
 h1 {
-    color: #00ccff;
-    text-shadow: 0 0 10px #00ccff;
+    color: #00f0ff;
+    text-shadow: 0 0 10px #00f0ff,
+                 0 0 20px #00f0ff,
+                 0 0 30px #00f0ff;
+    animation: neonPulse 2s infinite alternate;
+}
+
+@keyframes neonPulse {
+    from { text-shadow: 0 0 10px #00f0ff; }
+    to   { text-shadow: 0 0 35px #00f0ff; }
+}
+
+/* MENU */
+nav {
+    margin-top: 15px;
 }
 
 nav a {
-    color: #cceeff;
+    color: white;
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    color: #00ccff;
+    color: #00f0ff;
 }
 
+/* CONTEÚDO */
 .conteudo {
-    padding: 50px 20px;
+    padding: 60px 20px;
     text-align: center;
 }
 
-/* MOBILE */
+/* BOTÃO GAMER */
+.botao {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #00f0ff, #0066ff);
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
 
+.botao:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #00f0ff;
+}
+
+/* RESPONSIVO */
 @media (max-width: 768px) {
-    body::before {
+
+    .background-logo {
         width: 300px;
         height: 300px;
+        opacity: 0.05;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .botao {
+        width: 100%;
     }
 }
