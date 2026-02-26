@@ -1,193 +1,58 @@
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* FUNDO ANIMADO */
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(-45deg, #000000, #001f3f, #000814, #002b5c);
-    background-size: 400% 400%;
-    animation: gradientBG 10s ease infinite;
-    color: #cceeff;
-}
-
-/* ANIMAÇÃO DO FUNDO */
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* HEADER */
-header {
-    background-color: rgba(0, 8, 20, 0.9);
-    padding: 20px;
-    text-align: center;
-    border-bottom: 2px solid #00aaff;
-    animation: fadeDown 1s ease;
-}
-
-/* TÍTULO NEON */
-h1 {
-    color: #00ccff;
-    text-shadow: 0 0 5px #00ccff,
-                 0 0 15px #00ccff,
-                 0 0 30px #00ccff;
-    animation: pulse 2s infinite alternate;
-}
-
-/* PULSAR */
-@keyframes pulse {
-    from { text-shadow: 0 0 10px #00ccff; }
-    to { text-shadow: 0 0 25px #00ccff; }
-}
-
-/* NAV */
-nav {
-    margin-top: 10px;
-}
-
-nav a {
-    color: #cceeff;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #00ccff;
-}
-
-/* CONTEÚDO */
-.conteudo {
-    padding: 60px 20px;
-    text-align: center;
-    animation: fadeUp 1.2s ease;
-}
-
-h2 {
-    margin-bottom: 20px;
-    font-size: 28px;
-}
-
-p {
-    max-width: 600px;
-    margin: auto;
-    line-height: 1.6;
-}
-
-/* BOTÃO GAMER */
-.botao {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 15px 30px;
-    background: linear-gradient(90deg, #00ccff, #0066ff);
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px #00ccff;
-    transition: 0.3s;
-}
-
-.botao:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 30px #00ccff;
-}
-
-/* ANIMAÇÕES */
-@keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* 📱 RESPONSIVO */
-@media (max-width: 768px) {
-
-    h1 {
-        font-size: 22px;
-    }
-
-    h2 {
-        font-size: 20px;
-    }
-
-    nav a {
-        display: block;
-        margin: 10px 0;
-    }
-
-    .conteudo {
-        padding: 40px 15px;
-    }
-
-    .botao {
-        width: 90%;
-        font-size: 16px;
-    }
-}<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recrutamento sem lei.85</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sem Lei 85 - Recrutamento Oficial</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Recrutamento sem lei.85</h1>
-        <nav>
-            <a href="index.html">Sobre a Guilda</a>
-            <a href="entrar.html">Entrar para Sem Lei</a>
-        </nav>
-    </header>
+<header>
+    <div class="logo">SEM LEI<span>.85</span></div>
+    <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#recrutamento">Recrutamento</a>
+    </nav>
+</header>
 
-    <section class="conteudo">
-        <h2>Sobre a Guilda</h2>
-        <p>
-            A guilda <strong>sem lei.85</strong> é uma guilda focada em GG.
-            Só queremos pessoas boas, corajosas e dedicadas.
-            Aqui valorizamos respeito, habilidade e compromisso.
-        </p>
-    </section>
+<section class="hero">
+    <h1>DOMINE O JOGO</h1>
+    <p>A elite não nasce pronta. Ela é forjada na guerra.</p>
+    <a href="https://wa.me/5511914932723" target="_blank" class="btn-hero">
+        QUERO ENTRAR
+    </a>
+</section>
 
-</body>
-</html><!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrar para sem lei.85</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<section id="sobre" class="sobre">
+    <h2>SOBRE A GUILDA</h2>
+    <p>
+        A <strong>Sem Lei 85</strong> é uma guilda competitiva focada em desempenho máximo.
+        Buscamos jogadores dedicados, estratégicos e com mentalidade vencedora.
+    </p>
+</section>
 
-    <header>
-        <h1>Entrar para sem lei.85</h1>
-        <nav>
-            <a href="index.html">Sobre a Guilda</a>
-            <a href="entrar.html">Entrar para Sem Lei</a>
-        </nav>
-    </header>
+<section id="recrutamento" class="recrutamento">
+    <h2>PROCESSO DE RECRUTAMENTO</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>⚔ Habilidade</h3>
+            <p>Precisão, estratégia e consistência.</p>
+        </div>
+        <div class="card">
+            <h3>🔥 Compromisso</h3>
+            <p>Treinos e participação ativa.</p>
+        </div>
+        <div class="card">
+            <h3>🏆 Mentalidade</h3>
+            <p>Foco total em vitória.</p>
+        </div>
+    </div>
+</section>
 
-    <section class="conteudo">
-        <h2>Faça Parte da Elite</h2>
-        <p>Se você é forte, corajoso e quer evoluir, clique abaixo:</p>
-
-        <a class="botao" href="https://wa.me/5511914932723" target="_blank">
-            Entrar para Guilda
-        </a>
-    </section>
+<footer>
+    © 2026 Sem Lei 85 - Todos os direitos reservados
+</footer>
 
 </body>
 </html>
