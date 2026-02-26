@@ -1,42 +1,150 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sem Lei.85</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recrutamento Sem Lei.85</title>
+
+<style>
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* FUNDO ANIMADO */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(-45deg,#000000,#001f3f,#3a0000,#0a0f1c);
+    background-size:400% 400%;
+    animation:bgMove 15s ease infinite;
+    color:white;
+}
+
+/* Movimento do fundo */
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* HEADER */
+header{
+    background:rgba(0,8,20,0.9);
+    padding:20px;
+    text-align:center;
+    border-bottom:2px solid #00f0ff;
+    animation:fadeDown 1s ease forwards;
+}
+
+h1{
+    color:#00f0ff;
+    text-shadow:0 0 15px #00f0ff;
+}
+
+/* MENU */
+nav{
+    margin-top:10px;
+}
+
+nav a{
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#00f0ff;
+}
+
+/* CONTEÚDO */
+.conteudo{
+    padding:60px 20px;
+    text-align:center;
+    opacity:0;
+    transform:translateY(20px);
+    animation:fadeUp 1s ease forwards;
+    animation-delay:0.5s;
+}
+
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* BOTÃO GAMER */
+.botao{
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 35px;
+    border-radius:8px;
+    font-weight:bold;
+    text-decoration:none;
+    background:linear-gradient(90deg,#00f0ff,#0066ff);
+    color:black;
+    transition:0.3s;
+}
+
+.botao:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 25px #00f0ff;
+}
+
+/* RESPONSIVO */
+@media(max-width:768px){
+
+    h1{
+        font-size:22px;
+    }
+
+    nav a{
+        display:block;
+        margin:8px 0;
+    }
+
+    .conteudo{
+        padding:40px 15px;
+    }
+}
+
+</style>
 </head>
+
 <body>
-<div class="background-logo"></div>
-    
-    <header>
 
-        <img src="logo.png" alt="Logo Sem Lei 85" class="logo">
+<header>
+    <h1>Recrutamento Sem Lei.85</h1>
+    <nav>
+        <a href="#">Sobre</a>
+        <a href="#">Recrutamento</a>
+    </nav>
+</header>
 
-        <h1>RECRUTAMENTO SEM LEI.85</h1>
+<section class="conteudo">
+    <h2>Faça Parte da Elite</h2>
+    <p>Se você é forte, corajoso e quer evoluir, clique abaixo:</p>
 
-        <nav>
-            <a href="index.html">Sobre</a>
-            <a href="entrar.html">Entrar</a>
-        </nav>
-
-    </header>
-
-    <section class="conteudo">
-  <h2>Faça Parte da Elite</h2>
-<p>Preencha o formulário abaixo para entrar na guilda:</p>
-
-<form>
-    <input type="text" placeholder="Seu Nick" required>
-    <input type="number" placeholder="Seu Nível" required>
-    <textarea placeholder="Por que quer entrar?" rows="4" required></textarea>
-    <button class="botao" type="submit">Enviar Inscrição</button>
-</form>      <h2>Sobre a Guilda</h2>
-        <p>
-            A guilda <strong>Sem Lei.85</strong> é focada em GG competitivo.
-            Procuramos jogadores fortes, dedicados e disciplinados.
-        </p>
-    </section>
+    <a class="botao" href="https://wa.me/5511914932723" target="_blank">
+        Entrar pelo WhatsApp
+    </a>
+</section>
 
 </body>
 </html>
