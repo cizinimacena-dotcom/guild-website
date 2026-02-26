@@ -12,65 +12,66 @@ body {
     background-size: 400% 400%;
     animation: gradientMove 12s ease infinite;
     color: white;
+    position: relative;
     overflow-x: hidden;
 }
 
-/* Animação do fundo */
+/* animação do fundo */
 @keyframes gradientMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* LOGO GIGANTE NO FUNDO */
+/* LOGO NO FUNDO (CORRIGIDA DEFINITIVO) */
 .background-logo {
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 600px;
-    height: 600px;
-    background: url("logo.png") no-repeat center;
+    width: 500px;
+    height: 500px;
+    background-image: url("logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: contain;
+
     transform: translate(-50%, -50%);
-    opacity: 0.04; /* transparência forte */
-    pointer-events: none; /* não bloqueia clique */
-    z-index: 0;
+
+    opacity: 0.05;
+
+    pointer-events: none;
+
+    z-index: -1; /* FORÇA ficar atrás */
+
     animation: logoLED 8s linear infinite;
 }
 
-/* Animação LED da logo */
+/* animação RGB */
 @keyframes logoLED {
-    0%   { filter: hue-rotate(0deg); }
+    0% { filter: hue-rotate(0deg); }
     100% { filter: hue-rotate(360deg); }
 }
 
-/* GARANTE QUE O CONTEÚDO FIQUE NA FRENTE */
-header, section, footer {
+/* GARANTE QUE TODO O CONTEÚDO FIQUE NA FRENTE */
+header,
+section,
+footer {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 /* HEADER */
 header {
-    background: rgba(0, 8, 20, 0.8);
+    background: rgba(0, 8, 20, 0.85);
     padding: 20px;
     text-align: center;
     border-bottom: 2px solid #00f0ff;
-    backdrop-filter: blur(5px);
 }
 
-/* TÍTULO NEON */
+/* TÍTULO */
 h1 {
     color: #00f0ff;
-    text-shadow: 0 0 10px #00f0ff,
-                 0 0 20px #00f0ff,
-                 0 0 30px #00f0ff;
-    animation: neonPulse 2s infinite alternate;
-}
-
-@keyframes neonPulse {
-    from { text-shadow: 0 0 10px #00f0ff; }
-    to   { text-shadow: 0 0 35px #00f0ff; }
+    text-shadow: 0 0 20px #00f0ff;
 }
 
 /* MENU */
@@ -83,11 +84,6 @@ nav a {
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #00f0ff;
 }
 
 /* CONTEÚDO */
@@ -96,43 +92,23 @@ nav a:hover {
     text-align: center;
 }
 
-/* BOTÃO GAMER */
+/* BOTÃO */
 .botao {
     display: inline-block;
     margin-top: 25px;
     padding: 15px 30px;
     background: linear-gradient(90deg, #00f0ff, #0066ff);
     color: black;
-    text-decoration: none;
     font-weight: bold;
     border-radius: 8px;
-    transition: 0.3s;
-}
-
-.botao:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 25px #00f0ff;
+    text-decoration: none;
 }
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
-
     .background-logo {
-        width: 300px;
-        height: 300px;
-        opacity: 0.05;
-    }
-
-    h1 {
-        font-size: 22px;
-    }
-
-    nav a {
-        display: block;
-        margin: 10px 0;
-    }
-
-    .botao {
-        width: 100%;
+        width: 280px;
+        height: 280px;
+        opacity: 0.06;
     }
 }
