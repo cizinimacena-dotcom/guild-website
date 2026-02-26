@@ -6,57 +6,52 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(180deg, #000000, #001f3f);
-    color: #cceeff;
+    background: #0a0f1c;
+    color: white;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* LOGO NO FUNDO */
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    background: url("logo.png") no-repeat center;
+    background-size: contain;
+    transform: translate(-50%, -50%);
+    opacity: 0.08; /* transparência */
+    z-index: -1;
+
+    animation: ledBG 6s linear infinite;
+}
+
+/* Animação trocando cor */
+
+@keyframes ledBG {
+    0%   { filter: hue-rotate(0deg) drop-shadow(0 0 40px red); }
+    25%  { filter: hue-rotate(90deg) drop-shadow(0 0 40px lime); }
+    50%  { filter: hue-rotate(180deg) drop-shadow(0 0 40px cyan); }
+    75%  { filter: hue-rotate(270deg) drop-shadow(0 0 40px purple); }
+    100% { filter: hue-rotate(360deg) drop-shadow(0 0 40px red); }
 }
 
 /* HEADER */
 
 header {
-    background-color: #000814;
+    background-color: rgba(0, 8, 20, 0.8);
     padding: 20px;
     text-align: center;
     border-bottom: 2px solid #00aaff;
 }
 
 h1 {
-    margin-top: 15px;
-    font-size: 28px;
-    letter-spacing: 2px;
-}
-
-/* LOGO COM EFEITO LED */
-
-.logo {
-    width: 200px;
-    animation: ledColor 5s infinite linear;
-    filter: drop-shadow(0 0 20px red);
-}
-
-/* Animação mudando cor */
-
-@keyframes ledColor {
-    0% {
-        filter: hue-rotate(0deg) drop-shadow(0 0 20px red);
-    }
-    25% {
-        filter: hue-rotate(90deg) drop-shadow(0 0 20px green);
-    }
-    50% {
-        filter: hue-rotate(180deg) drop-shadow(0 0 20px blue);
-    }
-    75% {
-        filter: hue-rotate(270deg) drop-shadow(0 0 20px purple);
-    }
-    100% {
-        filter: hue-rotate(360deg) drop-shadow(0 0 20px red);
-    }
-}
-
-/* MENU */
-
-nav {
-    margin-top: 15px;
+    color: #00ccff;
+    text-shadow: 0 0 10px #00ccff;
 }
 
 nav a {
@@ -64,61 +59,22 @@ nav a {
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
 }
 
 nav a:hover {
     color: #00ccff;
 }
 
-/* CONTEÚDO */
-
 .conteudo {
-    padding: 40px 20px;
+    padding: 50px 20px;
     text-align: center;
-}
-
-.conteudo h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.botao {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 30px;
-    background: linear-gradient(90deg, #00ccff, #0066ff);
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px #00ccff;
-    transition: 0.3s;
-}
-
-.botao:hover {
-    background: linear-gradient(90deg, #0066ff, #00ccff);
-    box-shadow: 0 0 25px #00ccff;
 }
 
 /* MOBILE */
 
 @media (max-width: 768px) {
-
-    .logo {
-        width: 150px;
-    }
-
-    h1 {
-        font-size: 20px;
-    }
-
-    nav a {
-        display: block;
-        margin: 10px 0;
-    }
-
-    .botao {
-        width: 100%;
+    body::before {
+        width: 300px;
+        height: 300px;
     }
 }
