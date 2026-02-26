@@ -53,8 +53,6 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-
-    animation: fadeIn 1.5s ease;
 }
 
 .hero h1 {
@@ -128,13 +126,6 @@ footer {
     text-align: center;
     padding: 20px;
     background: #060b16;
-    font-size: 14px;
-}
-
-/* ANIMAÇÃO */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
 
 /* RESPONSIVO */
