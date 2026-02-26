@@ -14,34 +14,47 @@
     box-sizing:border-box;
 }
 
-/* FUNDO ANIMADO */
+/* FUNDO ARENA FREE FIRE */
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(-45deg,#000000,#001f3f,#3a0000,#0a0f1c);
-    background-size:400% 400%;
-    animation:bgMove 15s ease infinite;
+    background:
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+        url("https://images.unsplash.com/photo-1542751371-adc38448a05e") no-repeat center center/cover;
+    min-height:100vh;
     color:white;
+    animation:arenaMove 20s ease-in-out infinite alternate;
 }
 
-/* Movimento do fundo */
-@keyframes bgMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+/* Movimento suave no fundo */
+@keyframes arenaMove{
+    from{ background-size:110%; }
+    to{ background-size:120%; }
 }
 
 /* HEADER */
 header{
-    background:rgba(0,8,20,0.9);
+    background:rgba(0,0,0,0.85);
     padding:20px;
     text-align:center;
     border-bottom:2px solid #00f0ff;
     animation:fadeDown 1s ease forwards;
 }
 
+/* NOME RGB ANIMADO */
 h1{
-    color:#00f0ff;
-    text-shadow:0 0 15px #00f0ff;
+    font-size:32px;
+    font-weight:bold;
+    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
+    background-size:400%;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:rgbMove 6s linear infinite;
+}
+
+/* animação RGB */
+@keyframes rgbMove{
+    0%{ background-position:0%; }
+    100%{ background-position:400%; }
 }
 
 /* MENU */
@@ -63,10 +76,10 @@ nav a:hover{
 
 /* CONTEÚDO */
 .conteudo{
-    padding:60px 20px;
     text-align:center;
+    padding:100px 20px;
     opacity:0;
-    transform:translateY(20px);
+    transform:translateY(30px);
     animation:fadeUp 1s ease forwards;
     animation-delay:0.5s;
 }
@@ -89,7 +102,12 @@ nav a:hover{
     }
 }
 
-/* BOTÃO GAMER */
+h2{
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+/* BOTÃO NEON */
 .botao{
     display:inline-block;
     margin-top:30px;
@@ -100,18 +118,24 @@ nav a:hover{
     background:linear-gradient(90deg,#00f0ff,#0066ff);
     color:black;
     transition:0.3s;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%{ box-shadow:0 0 10px #00f0ff; }
+    50%{ box-shadow:0 0 30px #00f0ff; }
+    100%{ box-shadow:0 0 10px #00f0ff; }
 }
 
 .botao:hover{
-    transform:scale(1.08);
-    box-shadow:0 0 25px #00f0ff;
+    transform:scale(1.1);
 }
 
 /* RESPONSIVO */
 @media(max-width:768px){
 
     h1{
-        font-size:22px;
+        font-size:24px;
     }
 
     nav a{
@@ -120,7 +144,11 @@ nav a:hover{
     }
 
     .conteudo{
-        padding:40px 15px;
+        padding:60px 15px;
+    }
+
+    h2{
+        font-size:22px;
     }
 }
 
@@ -130,7 +158,7 @@ nav a:hover{
 <body>
 
 <header>
-    <h1>Recrutamento Sem Lei.85</h1>
+    <h1>SEM LEI.85</h1>
     <nav>
         <a href="#">Sobre</a>
         <a href="#">Recrutamento</a>
