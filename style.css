@@ -1,1 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0a0f1c;
+    color: white;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: #060b16;
+    border-bottom: 2px solid #00f0ff;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #00f0ff;
+}
+
+nav a {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00f0ff;
+}
+
+/* HERO */
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url("https://images.unsplash.com/photo-1542751371-adc38448a05e");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    animation: fadeIn 1.5s ease;
+}
+
+.hero h1 {
+    font-size: 50px;
+    color: #00f0ff;
+    text-shadow: 0 0 20px #00f0ff;
+}
+
+.hero p {
+    margin: 20px 0;
+    font-size: 18px;
+    max-width: 600px;
+}
+
+.btn-hero {
+    padding: 15px 35px;
+    background: #00f0ff;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-hero:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00f0ff;
+}
+
+/* SOBRE */
+.sobre {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.sobre h2 {
+    color: #00f0ff;
+    margin-bottom: 20px;
+}
+
+/* CARDS */
+.recrutamento {
+    padding: 80px 10%;
+    text-align: center;
+    background: #060b16;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #111827;
+    padding: 30px;
+    width: 250px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #00f0ff;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #060b16;
+    font-size: 14px;
+}
+
+/* ANIMAÇÃO */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* RESPONSIVO */
+@media(max-width: 768px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
