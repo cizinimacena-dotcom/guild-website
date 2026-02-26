@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Recrutamento Sem Lei.85</title>
+<title>Sem Lei.85 | Recrutamento</title>
 
 <style>
 
@@ -14,18 +14,18 @@
     box-sizing:border-box;
 }
 
-/* FUNDO ARENA FREE FIRE */
+/* FUNDO AZUL ARENA */
 body{
     font-family: Arial, Helvetica, sans-serif;
     background:
-        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+        linear-gradient(rgba(0,0,50,0.7), rgba(0,0,80,0.9)),
         url("https://images.unsplash.com/photo-1542751371-adc38448a05e") no-repeat center center/cover;
     min-height:100vh;
     color:white;
     animation:arenaMove 20s ease-in-out infinite alternate;
 }
 
-/* Movimento suave no fundo */
+/* Movimento leve */
 @keyframes arenaMove{
     from{ background-size:110%; }
     to{ background-size:120%; }
@@ -33,14 +33,13 @@ body{
 
 /* HEADER */
 header{
-    background:rgba(0,0,0,0.85);
+    background:rgba(0,0,80,0.9);
     padding:20px;
     text-align:center;
     border-bottom:2px solid #00f0ff;
-    animation:fadeDown 1s ease forwards;
 }
 
-/* NOME RGB ANIMADO */
+/* NOME RGB */
 h1{
     font-size:32px;
     font-weight:bold;
@@ -51,7 +50,6 @@ h1{
     animation:rgbMove 6s linear infinite;
 }
 
-/* animação RGB */
 @keyframes rgbMove{
     0%{ background-position:0%; }
     100%{ background-position:400%; }
@@ -67,6 +65,7 @@ nav a{
     margin:0 15px;
     text-decoration:none;
     font-weight:bold;
+    cursor:pointer;
     transition:0.3s;
 }
 
@@ -74,27 +73,22 @@ nav a:hover{
     color:#00f0ff;
 }
 
-/* CONTEÚDO */
-.conteudo{
+/* SEÇÕES */
+.section{
+    display:none;
     text-align:center;
     padding:100px 20px;
-    opacity:0;
-    transform:translateY(30px);
-    animation:fadeUp 1s ease forwards;
-    animation-delay:0.5s;
+    animation:fadeUp 0.8s ease forwards;
+}
+
+.section.active{
+    display:block;
 }
 
 @keyframes fadeUp{
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@keyframes fadeDown{
     from{
         opacity:0;
-        transform:translateY(-20px);
+        transform:translateY(30px);
     }
     to{
         opacity:1;
@@ -102,12 +96,7 @@ nav a:hover{
     }
 }
 
-h2{
-    font-size:28px;
-    margin-bottom:20px;
-}
-
-/* BOTÃO NEON */
+/* BOTÃO */
 .botao{
     display:inline-block;
     margin-top:30px;
@@ -118,17 +107,11 @@ h2{
     background:linear-gradient(90deg,#00f0ff,#0066ff);
     color:black;
     transition:0.3s;
-    animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-    0%{ box-shadow:0 0 10px #00f0ff; }
-    50%{ box-shadow:0 0 30px #00f0ff; }
-    100%{ box-shadow:0 0 10px #00f0ff; }
 }
 
 .botao:hover{
     transform:scale(1.1);
+    box-shadow:0 0 25px #00f0ff;
 }
 
 /* RESPONSIVO */
@@ -143,12 +126,8 @@ h2{
         margin:8px 0;
     }
 
-    .conteudo{
+    .section{
         padding:60px 15px;
-    }
-
-    h2{
-        font-size:22px;
     }
 }
 
@@ -160,19 +139,41 @@ h2{
 <header>
     <h1>SEM LEI.85</h1>
     <nav>
-        <a href="#">Sobre</a>
-        <a href="#">Recrutamento</a>
+        <a onclick="showSection('sobre')">Sobre a Guilda</a>
+        <a onclick="showSection('recrutamento')">Recrutamento</a>
     </nav>
 </header>
 
-<section class="conteudo">
+<!-- SOBRE -->
+<section id="sobre" class="section active">
+    <h2>Foco Total em Guerra de Guildas</h2>
+    <p>
+        A guilda <strong>SEM LEI.85</strong> é 100% focada em <strong>Guerra de Guildas</strong>.
+        Nosso objetivo é dominar partidas, vencer confrontos decisivos e subir no ranking nacional.
+    </p>
+    <p style="margin-top:20px; font-weight:bold; color:#00f0ff;">
+        🎯 Nossa meta é chegar no TOP BRASIL 🇧🇷
+    </p>
+</section>
+
+<!-- RECRUTAMENTO -->
+<section id="recrutamento" class="section">
     <h2>Faça Parte da Elite</h2>
-    <p>Se você é forte, corajoso e quer evoluir, clique abaixo:</p>
+    <p>Se você é forte, competitivo e joga sério, entre agora:</p>
 
     <a class="botao" href="https://wa.me/5511914932723" target="_blank">
         Entrar pelo WhatsApp
     </a>
 </section>
+
+<script>
+function showSection(id){
+    document.querySelectorAll('.section').forEach(sec=>{
+        sec.classList.remove('active');
+    });
+    document.getElementById(id).classList.add('active');
+}
+</script>
 
 </body>
 </html>
