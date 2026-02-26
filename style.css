@@ -8,70 +8,52 @@
 /* FUNDO ANIMADO */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(-45deg, #000000, #0a0f1c, #001f3f, #3a0000);
+    background: linear-gradient(-45deg, #000000, #001f3f, #3a0000, #0a0f1c);
     background-size: 400% 400%;
-    animation: gradientMove 12s ease infinite;
+    animation: bgMove 15s ease infinite;
     color: white;
-    position: relative;
-    overflow-x: hidden;
 }
 
-/* animação do fundo */
-@keyframes gradientMove {
+/* Movimento do fundo */
+@keyframes bgMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* LOGO NO FUNDO (CORRIGIDA DEFINITIVO) */
-.background-logo {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 500px;
-    height: 500px;
-    background-image: url("logo.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-
-    transform: translate(-50%, -50%);
-
-    opacity: 0.05;
-
-    pointer-events: none;
-
-    z-index: -1; /* FORÇA ficar atrás */
-
-    animation: logoLED 8s linear infinite;
+/* ANIMAÇÃO SUAVE DE ENTRADA */
+header, .conteudo {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s ease forwards;
 }
 
-/* animação RGB */
-@keyframes logoLED {
-    0% { filter: hue-rotate(0deg); }
-    100% { filter: hue-rotate(360deg); }
+header {
+    animation-delay: 0.3s;
 }
 
-/* GARANTE QUE TODO O CONTEÚDO FIQUE NA FRENTE */
-header,
-section,
-footer {
-    position: relative;
-    z-index: 2;
+.conteudo {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* HEADER */
 header {
-    background: rgba(0, 8, 20, 0.85);
+    background: rgba(0, 8, 20, 0.9);
     padding: 20px;
     text-align: center;
     border-bottom: 2px solid #00f0ff;
 }
 
-/* TÍTULO */
 h1 {
     color: #00f0ff;
-    text-shadow: 0 0 20px #00f0ff;
+    text-shadow: 0 0 15px #00f0ff;
 }
 
 /* MENU */
@@ -84,6 +66,11 @@ nav a {
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00f0ff;
 }
 
 /* CONTEÚDO */
@@ -92,23 +79,62 @@ nav a {
     text-align: center;
 }
 
-/* BOTÃO */
-.botao {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 15px 30px;
-    background: linear-gradient(90deg, #00f0ff, #0066ff);
-    color: black;
-    font-weight: bold;
-    border-radius: 8px;
-    text-decoration: none;
+/* FORMULÁRIO */
+form {
+    max-width: 400px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-/* RESPONSIVO */
+input, textarea {
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+input:focus, textarea:focus {
+    box-shadow: 0 0 10px #00f0ff;
+}
+
+/* BOTÃO GAMER */
+.botao {
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(90deg, #00f0ff, #0066ff);
+    color: black;
+    transition: 0.3s;
+}
+
+/* EFEITO GAMER */
+.botao:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00f0ff;
+}
+
+/* MOBILE AJUSTADO */
 @media (max-width: 768px) {
-    .background-logo {
-        width: 280px;
-        height: 280px;
-        opacity: 0.06;
+
+    h1 {
+        font-size: 22px;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px 0;
+    }
+
+    .conteudo {
+        padding: 40px 15px;
+    }
+
+    form {
+        width: 100%;
     }
 }
